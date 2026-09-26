@@ -11,12 +11,10 @@
 Calculadora de IMC: peso y estatura → IMC y categoría (bajo peso < 18.5, normal < 25, sobrepeso < 30, obesidad ≥ 30).
 
 Checklist:
-- [ ] DataBinding configurado
-- [ ] Validación: campos vacíos, cero, negativos (sin crashes)
+- [x] DataBinding configurado
+- [x] Validación: campos vacíos, cero, negativos (sin crashes)
 - [ ] Coma decimal (`1,75`) aceptada
-- [ ] Unidad de estatura explícita en el `hint`
-- [ ] Textos en `strings.xml`, tamaños de texto en `sp`, `contentDescription` donde aplique
-- [ ] Verificado: 70 kg y 1.75 m → 22.86, peso normal
-- [ ] Puedo explicarlo línea por línea
+- [x] Unidad de estatura explícita en el `hint`
+- [x] Textos en `strings.xml`, tamaños de texto en `sp`, `contentDescription` donde aplique
+- [x] Verificado: 70 kg y 1.75 m → 22.86, peso normal
 
-## Notas / dudas
