@@ -45,4 +45,29 @@ class BmiCalculatorTest {
         val categoryRes = BmiCalculator.categoryFor(32.0)
         assertEquals(R.string.category_obesity, categoryRes)
     }
+
+    @Test
+    fun categoryFor_exactlyNormalLowerBound_isNormal() {
+        assertEquals(R.string.category_normal, BmiCalculator.categoryFor(18.5))
+    }
+
+    @Test
+    fun categoryFor_justBelowNormalLowerBound_isUnderweight() {
+        assertEquals(R.string.category_underweight, BmiCalculator.categoryFor(18.49))
+    }
+
+    @Test
+    fun categoryFor_normalUpperBound_isNormal() {
+        assertEquals(R.string.category_normal, BmiCalculator.categoryFor(24.95))
+    }
+
+    @Test
+    fun categoryFor_exactlyOverweightLowerBound_isOverweight() {
+        assertEquals(R.string.category_overweight, BmiCalculator.categoryFor(25.0))
+    }
+
+    @Test
+    fun categoryFor_exactlyObesityLowerBound_isObesity() {
+        assertEquals(R.string.category_obesity, BmiCalculator.categoryFor(30.0))
+    }
 }
