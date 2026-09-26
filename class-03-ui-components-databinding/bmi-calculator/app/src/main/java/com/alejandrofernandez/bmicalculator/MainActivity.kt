@@ -26,5 +26,48 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        binding.btnCalculate.setOnClickListener { onCalculateClicked() }
+    }
+
+    private fun onCalculateClicked() {
+        // Clear previous errors
+        binding.tilWeight.error = null
+        binding.tilHeight.error = null
+
+        val weightStr = binding.etWeight.text.toString().trim()
+        val heightStr = binding.etHeight.text.toString().trim()
+
+        var hasError = false
+
+        val weight = weightStr.replace(',', '.').toDoubleOrNull()
+        if (weightStr.isEmpty()) {
+            binding.tilWeight.error = getString(R.string.error_required)
+            hasError = true
+        } else if (weight == null || weight <= 0) {
+            binding.tilWeight.error = getString(R.string.error_invalid)
+            hasError = true
+        }
+
+        val height = heightStr.replace(',', '.').toDoubleOrNull()
+        if (heightStr.isEmpty()) {
+            binding.tilHeight.error = getString(R.string.error_required)
+            hasError = true
+        } else if (height == null || height <= 0) {
+            binding.tilHeight.error = getString(R.string.error_invalid)
+            hasError = true
+        }
+
+        if (hasError || weight == null || height == null) {
+            return
+        }
+
+        val bmi = BmiCalculator.calculate(weight, height)
+        val categoryRes = BmiCalculator.categoryFor(bmi)
+
+        val bmiText = "%.1f".format(bmi)
+        val categoryText = getString(categoryRes)
+
+        binding.tvResult.text = getString(R.string.result_format, bmiText, categoryText)
     }
 }

@@ -5,4 +5,17 @@
     <string name="height_hint">Estatura (m)</string>
     <string name="btn_calculate_text">Calcular</string>
     <string name="result_placeholder">El resultado aparecerá aquí</string>
+
+    <!-- Categorías de IMC -->
+    <string name="category_underweight">Bajo peso</string>
+    <string name="category_normal">Peso normal</string>
+    <string name="category_overweight">Sobrepeso</string>
+    <string name="category_obesity">Obesidad</string>
+
+    <!-- Mensajes de error -->
+    <string name="error_required">Este campo es requerido</string>
+    <string name="error_invalid">Ingrese un número mayor a cero</string>
+
+    <!-- Formato de resultado -->
+    <string name="result_format">Tu IMC es %1$s (%2$s)</string>
 </resources>
