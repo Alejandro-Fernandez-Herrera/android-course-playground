@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Calculadora IMC</string>
+    <string name="title_bmi_calculator">Calculadora de IMC</string>
+    <string name="weight_hint">Peso (kg)</string>
+    <string name="height_hint">Estatura (m)</string>
+    <string name="btn_calculate_text">Calcular</string>
+    <string name="result_placeholder">El resultado aparecerá aquí</string>
 </resources>
